@@ -219,7 +219,19 @@ section {
     justify-content: center;
     background-size: cover;
     background-position: center;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.division-card:hover {
+    text-decoration: none !important;
+}
+
+.division-card:visited {
+    text-decoration: none !important;
+}
+
+.division-card:link {
+    text-decoration: none !important;
 }
 
 .division-card::before {

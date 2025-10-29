@@ -252,7 +252,7 @@ section {
 
 .division-card.construction {
     border-color: #FFC107;
-    background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800');
+    background-image: url('images/hero/construction-card.jpeg');
 }
 
 .division-card.construction::before {

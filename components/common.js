@@ -3,8 +3,8 @@ const headerHTML = `
 <header>
     <div class="header-content">
         <a href="index.html" class="logo">
-            <span class="logo-mark">IG</span>
-            株式会社IG Corporation
+            <img src="ロゴ.png" alt="IG Corporation Logo" class="logo-image">
+            <span class="logo-text">株式会社IG Corporation</span>
         </a>
 
         <button class="hamburger" id="hamburger" aria-label="メニュー">

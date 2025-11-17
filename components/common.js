@@ -52,10 +52,15 @@ const footerHTML = `
         <div class="footer-nav">
             <ul>
                 <li><a href="index.html">ホーム</a></li>
-                <li><a href="realestate.html">不動産事業</a></li>
-                <li><a href="construction.html">建設事業</a></li>
-                <li><a href="automotive.html">車両事業</a></li>
-                <li><a href="restaurant.html">飲食事業</a></li>
+                <li class="dropdown-parent">
+                    <span class="dropdown-label">事業案内</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="realestate.html">不動産事業</a></li>
+                        <li><a href="construction.html">建設事業</a></li>
+                        <li><a href="automotive.html">車両事業</a></li>
+                        <li><a href="restaurant.html">飲食事業</a></li>
+                    </ul>
+                </li>
                 <li><a href="company.html">会社案内</a></li>
                 <li><a href="recruit.html">採用情報</a></li>
                 <li><a href="contact.html">お問い合わせ</a></li>

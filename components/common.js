@@ -15,7 +15,7 @@ const headerHTML = `
 
         <nav id="nav">
             <ul>
-                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li class="dropdown-parent">
                     <span class="dropdown-label">事業案内</span>
                     <ul class="dropdown-menu">

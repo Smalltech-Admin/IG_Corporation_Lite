@@ -345,16 +345,16 @@ section {
 .divisions-section::before {
     content: '';
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 200px;
     background-image: url('ロゴ.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.15;
     filter: contrast(1.5) saturate(1.2);
     z-index: 0;
     pointer-events: none;

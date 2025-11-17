@@ -42,8 +42,11 @@ const footerHTML = `
             <h4>株式会社IG Corporation</h4>
             <p class="footer-description">
                 創業10年、群馬県高崎市を拠点に<br>
-                安全第一の足場工事・解体工事を提供<br>
-                <br>
+                安全第一の足場工事・解体工事を提供
+            </p>
+        </div>
+        <div class="footer-section">
+            <p class="footer-description">
                 建設業許可：群馬県知事許可<br>
                 （般-31）第○○○○号
             </p>

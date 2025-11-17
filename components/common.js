@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ハンバーガーメニューの初期化
     initHamburgerMenu();
+
+    // ヒーロースライドショーの初期化
+    initHeroSlider();
 });
 
 // ハンバーガーメニューの初期化
@@ -113,4 +116,42 @@ function initHamburgerMenu() {
             });
         }
     }
+}
+
+// ヒーロースライドショーの初期化
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dots .dot');
+
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5秒ごとに切り替え
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // ドットクリックイベント
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, slideInterval);
+        });
+    });
+
+    // 自動スライド
+    let autoSlide = setInterval(nextSlide, slideInterval);
 }

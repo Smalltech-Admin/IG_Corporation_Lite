@@ -211,12 +211,48 @@ main {
 .hero-section {
     height: calc(100vh - 120px);
     min-height: 600px;
-    background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), linear-gradient(135deg, var(--primary-green), var(--light-green));
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
 }
 
 /* サブページのヒーローセクション */
@@ -229,6 +265,33 @@ body:not(.home-page) .hero-section {
 .hero-content {
     max-width: 900px;
     padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
 }
 
 .hero-content h1 {
@@ -330,27 +393,27 @@ section {
     z-index: 2;
 }
 
+.division-card.realestate {
+    border-color: #4CAF50;
+    background-image: url('images/cards/realestate-card.jpg');
+}
+
+.division-card.realestate::before {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(129, 199, 132, 0.85));
+}
+
 .division-card.construction {
     border-color: #FFC107;
-    background-image: url('images/hero/construction-card.jpeg');
+    background-image: url('images/cards/construction-card.jpg');
 }
 
 .division-card.construction::before {
     background: linear-gradient(135deg, rgba(255, 193, 7, 0.9), rgba(255, 152, 0, 0.85));
 }
 
-.division-card.realestate {
-    border-color: #4CAF50;
-    background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800');
-}
-
-.division-card.realestate::before {
-    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(56, 142, 60, 0.85));
-}
-
 .division-card.automotive {
     border-color: #2196F3;
-    background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800');
+    background-image: url('images/cards/automotive-card.jpg');
 }
 
 .division-card.automotive::before {
@@ -359,7 +422,7 @@ section {
 
 .division-card.restaurant {
     border-color: #D4AF37;
-    background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800');
+    background-image: url('images/cards/restaurant-card.jpg');
 }
 
 .division-card.restaurant::before {

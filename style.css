@@ -802,15 +802,59 @@ footer {
     justify-content: flex-start;
 }
 
-.footer-nav a {
+.footer-nav > ul > li {
+    position: relative;
+}
+
+.footer-nav a,
+.footer-nav .dropdown-label {
     color: rgba(255,255,255,0.7);
     text-decoration: none;
     font-weight: 500;
     font-size: 22px;
+    cursor: pointer;
 }
 
-.footer-nav a:hover {
+.footer-nav a:hover,
+.footer-nav .dropdown-label:hover {
     color: white;
+}
+
+.footer-nav .dropdown-parent {
+    position: relative;
+}
+
+.footer-nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: rgba(44, 62, 80, 0.98);
+    min-width: 180px;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.footer-nav .dropdown-parent:hover .dropdown-menu {
+    display: block;
+}
+
+.footer-nav .dropdown-menu li {
+    padding: 0;
+}
+
+.footer-nav .dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.footer-nav .dropdown-menu a:hover {
+    background: rgba(255,255,255,0.1);
 }
 
 .footer-bottom {

@@ -115,7 +115,7 @@ function initHamburgerMenu() {
             });
         });
 
-        // モバイルでのドロップダウンメニュー制御
+        // モバイルでのドロップダウンメニュー制御（ヘッダー）
         const dropdownLabel = nav.querySelector('.dropdown-label');
         if (dropdownLabel) {
             dropdownLabel.addEventListener('click', function() {
@@ -123,6 +123,15 @@ function initHamburgerMenu() {
                 parent.classList.toggle('active');
             });
         }
+    }
+
+    // フッターのドロップダウンメニュー制御
+    const footerDropdownLabel = document.querySelector('.footer-nav .dropdown-label');
+    if (footerDropdownLabel) {
+        footerDropdownLabel.addEventListener('click', function() {
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+        });
     }
 }
 

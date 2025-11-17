@@ -770,6 +770,7 @@ footer {
     background: var(--text-dark);
     color: white;
     padding: 80px 20px 40px;
+    overflow: visible;
 }
 
 .footer-content {
@@ -780,6 +781,11 @@ footer {
     gap: 60px;
     margin-bottom: 60px;
     align-items: start;
+    overflow: visible;
+}
+
+.footer-nav {
+    overflow: visible;
 }
 
 .footer-section h4 {

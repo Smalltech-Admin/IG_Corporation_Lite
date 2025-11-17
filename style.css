@@ -1079,6 +1079,13 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    /* フッタードロップダウンをモバイルで動作させる */
+    .footer-nav .dropdown-parent.active .dropdown-menu {
+        display: block;
+    }
+}
+
 @media (max-width: 480px) {
     .footer-nav ul {
         flex-direction: column;

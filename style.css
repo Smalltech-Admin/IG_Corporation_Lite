@@ -338,6 +338,32 @@ section {
 }
 
 /* 事業部案内 */
+.divisions-section {
+    position: relative;
+}
+
+.divisions-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background-image: url('ロゴ.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.divisions-section .container {
+    position: relative;
+    z-index: 1;
+}
+
 .divisions-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

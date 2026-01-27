@@ -15,7 +15,7 @@ const headerHTML = `
 
         <nav id="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">ホーム</a></li>
                 <li class="dropdown-parent">
                     <span class="dropdown-label">事業案内</span>
                     <ul class="dropdown-menu">
@@ -78,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ヒーロースライドショーの初期化
     initHeroSlider();
+
+    // スクロールアニメーションの初期化
+    initScrollAnimation();
 });
 
 // ハンバーガーメニューの初期化
@@ -147,4 +150,28 @@ function initHeroSlider() {
 
     // 自動スライド
     let autoSlide = setInterval(nextSlide, slideInterval);
+}
+
+// スクロールアニメーションの初期化
+function initScrollAnimation() {
+    const cards = document.querySelectorAll('.division-card');
+
+    if (cards.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // 順番にフェードインするよう遅延を追加
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    cards.forEach(card => observer.observe(card));
 }

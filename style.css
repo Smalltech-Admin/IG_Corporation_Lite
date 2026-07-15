@@ -367,7 +367,7 @@ section {
 
 .divisions-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     margin-top: 40px;
     max-width: 1400px;
@@ -445,6 +445,21 @@ section {
 
 .division-card.construction::before {
     background: linear-gradient(135deg, rgba(255, 193, 7, 0.9), rgba(255, 152, 0, 0.85));
+}
+
+.division-card.office-support {
+    background-image: url('images/cards/office-support-card.jpg');
+}
+
+.division-card.office-support::before {
+    background: linear-gradient(135deg, rgba(0, 137, 123, 0.9), rgba(38, 166, 154, 0.85));
+}
+
+/* 「建設事務サポート」は8文字で長いため、5カラムになるデスクトップのみ折り返さないよう微調整 */
+@media (min-width: 1201px) {
+    .division-card.office-support h3 {
+        font-size: 22px;
+    }
 }
 
 .division-card.automotive {
